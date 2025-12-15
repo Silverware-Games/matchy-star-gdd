@@ -1,4 +1,4 @@
-# Matchy Star – Game Design Document (Concise)
+# Matchy Star – Game Design Document
 
 Steam Page: https://matchystar.com  
 Developer: Silverware Games, Inc.  
@@ -7,97 +7,97 @@ Uncut Play Video: https://www.youtube.com/watch?v=rDVWQaZiYxs
 
 ## 1. What Matchy Star Is
 
-Matchy Star is a **skill-driven, replayable matching game** set in a sci-fi universe, focused on *clarity, mastery, and long-term fun* rather than monetization pressure or casino-style manipulation.
+Matchy Star is a **skill-driven, replayable matching game** set in a sci-fi universe. It prioritizes **clarity, mastery, and long-term fun**, deliberately avoiding monetization pressure, casino mechanics, or psychological manipulation.
 
-The current alpha proves the core loop is solid. The goal of this design document is to define **what systems, content, and structure are required to turn it into a complete, exceptional game** with depth, progression, and hundreds of hours of meaningful play.
+The current alpha build demonstrates that the core loop is already fun and functional. The purpose of this document is not to justify the game’s existence, but to define **the systems, structure, and content required to elevate it into a complete, exceptional experience** with strong progression and long-term replay value.
 
-This document summarizes the **actual planned features and milestones**, as tracked in the Matchy Star GDD issues repository.
+This document reflects the **actual planned design direction and milestones**, as tracked in the Matchy Star GDD issues repository.
 
 ## 2. Core Gameplay Loop (Current + Planned)
 
 ### Current Loop (Alpha)
-1. Select level.
-2. Make matches to supply ship with fuel.
-3. Once 3 ships reach the end you win the level.
-4. Run ends → results shown → repeat
+1. Select a level  
+2. Make matches to supply ships with fuel  
+3. Once three ships reach the destination, the level is cleared  
+4. Results are shown → next level
 
-This loop works, but lacks:
-- Long-term structure
-- Player agency before runs
-- Meaningful progression systems
-- Clear world context
+This loop is solid, readable, and fun, but currently lacks:
+- Long-term progression context
+- Pre-run player agency
+- Systems that reward mastery over time
+- A strong sense of world and journey
 
-The planned systems below extend and deepen this loop.
+The systems below extend this loop without replacing it.
 
 ## 3. Core Gameplay Systems
 
-### 3.1 Ballast System (Planned Core System)
+### 3.1 Ballast System (Core Pillar)
 
-The **Ballast System** introduces weight, balance, and risk management into gameplay.
+The **Ballast System** introduces weight, balance, and risk management into matching decisions.
 
-- Ships have a ballast value affected by player actions
-- Ballast influences gameplay outcomes (difficulty, stability, or scoring)
-- A **Ballast Counter UI** gives constant feedback to the player
+- Ships accumulate ballast based on player actions
+- Ballast meaningfully affects outcomes (difficulty, stability, scoring, or efficiency)
+- A dedicated **Ballast Counter UI** provides continuous feedback
 
-Purpose:
-- Adds decision-making beyond simple matching
-- Creates tension and mastery opportunities
-- Makes runs feel distinct and skill-based
+**Purpose:**
+- Elevates matching from pattern recognition to decision-making
+- Creates tension and meaningful trade-offs
+- Allows mastery to emerge over repeated play
 
-This is a **pillar system**, not optional content.
+This is a **foundational system**, not optional content.
 
-### 3.2 Arc Chart UI (Planned Core UI)
+### 3.2 Arc Chart UI (Core UI System)
 
-The **Arc Chart** is a visual gameplay aid showing:
+The **Arc Chart** visually communicates:
 - Progression arcs
 - Risk thresholds
-- Outcome trends
+- Likely outcomes based on current state
 
-Purpose:
-- Improve player understanding of cause → effect
-- Reduce confusion during advanced play
-- Support higher skill ceilings without tutorials
+**Purpose:**
+- Makes cause → effect legible at a glance
+- Reduces confusion as systems stack
+- Supports higher skill ceilings without relying on text tutorials
 
-This UI is meant to **teach through visualization**, not text.
+This UI teaches through **visualization and feedback**, not instruction.
 
 ## 4. Player Agency & Progression
 
 ### 4.1 Character Selection (Pre-Run)
 
-Players will select a character (or ship / loadout equivalent) **before starting a run**.
+Players select a character (or equivalent ship/loadout) before starting a run.
 
-Each character may affect:
+Characters influence:
 - Starting conditions
 - Ballast behavior
-- Rules or modifiers
+- Rules, modifiers, or strategic emphasis
 
-Purpose:
-- Give players intentional choices
+**Purpose:**
+- Give players ownership over how they play
 - Encourage experimentation
-- Support replayability
+- Increase replayability without content bloat
 
 ### 4.2 Unlockables & Game Modes
 
 Players unlock:
 - Characters
 - Gameplay modes
-- Rule variants (e.g. “Breaks On” vs “Breaks Off”)
+- Rule variants (e.g., “Breaks On” vs “Breaks Off”)
 
-Unlocks are **earned through play**, not monetization.
+All unlocks are **earned through play**, not monetization.
 
-Purpose:
-- Extend long-term engagement
-- Allow players to tailor difficulty and style
-- Prevent stagnation of the core loop
+**Purpose:**
+- Sustain long-term engagement
+- Let players tailor difficulty and playstyle
+- Keep the core loop fresh without relying on RNG or grind
 
 ## 5. World & Level Structure
 
-Matchy Star uses a **celestial progression model**, with themed regions that introduce new challenges and visual identity.
+Matchy Star uses a **celestial progression model**, where themed regions introduce new mechanics, constraints, and visual identity.
 
-### Planned Regions:
+### Planned Regions (Examples):
 1. **Celestial 1 – Alpha System**  
    - Introductory region  
-   - Teaches baseline mechanics  
+   - Establishes baseline mechanics  
 
 2. **Celestial 2 – Starbase**  
    - Increased system interaction  
@@ -106,59 +106,59 @@ Matchy Star uses a **celestial progression model**, with themed regions that int
 3. **Celestial 3 – Moon Spittoon**  
    - Advanced mechanics  
    - Higher risk / reward  
-   - Designed for experienced players
+   - Designed for experienced players  
 
-4. ** There will be 11 total celestials **
+There will be **11 total Celestials** in the complete game.
 
-Each region is intended to:
+Each region is designed to:
 - Reinforce mastery
-- Introduce variation without overwhelming
-- Provide a sense of journey and place
+- Introduce variation without overwhelming the player
+- Provide a clear sense of progression, place, and journey
 
 ## 6. Game Flow & UX Improvements
 
 ### 6.1 Lobby Flow
 
-The current lobby is under review.
+The current lobby flow will be refined.
 
 Planned actions:
-- Either remove it entirely or redesign it
-- Reduce friction between runs
-- Prevent UI obstruction or confusion (e.g., ships blocking visibility)
+- Simplify or remove unnecessary transitions
+- Reduce friction between levels
+- Prevent UI obstruction or visual confusion
 
-Goal:
-- Faster time from “launch game” → “playing”
-- Cleaner mental model for players
+**Goal:**
+- Minimize time from “launch game” → “playing”
+- Maintain a clean, intuitive mental model
 
 ### 6.2 Level Naming & Clarity
 
-Some levels currently suffer from unclear naming or intent.
+Some levels require clearer naming or framing.
 
 Planned improvements:
-- Rename levels where necessary
+- Rename levels where intent is unclear
 - Align names with mechanics and expectations
 
-Goal:
-- Reduce confusion
-- Make progression feel intentional and readable
+**Goal:**
+- Reduce player confusion
+- Make progression feel deliberate and readable
 
 ## 7. Visual & Technical Cleanup
 
 ### Planned Technical Work:
-- Migrate item handling to a **Sprite-based system**
-- Fix known visual bugs (e.g., incorrect runway lights)
+- Migrate item handling to a centralized **Sprite-based system**
+- Resolve known visual bugs (e.g., runway lighting inconsistencies)
 - Improve ship visibility and UI layering
 
-Purpose:
-- Reduce bugs
-- Improve maintainability
-- Increase visual clarity during play
+**Purpose:**
+- Increase stability and maintainability
+- Improve visual clarity during play
+- Support future expansion cleanly
 
 ## 8. Milestone Overview
 
 ### Phase 1 – Core Systems
-- Ballast system implemented
-- Ballast UI integrated
+- Ballast system implementation
+- Ballast UI integration
 - Sprite system migration
 
 ### Phase 2 – Player Choice
@@ -170,9 +170,10 @@ Purpose:
 - Alpha System finalized
 - Starbase region implemented
 - Moon Spittoon region implemented
+- Additional Celestials in production
 
 ### Phase 4 – Polish & Flow
-- Lobby redesign or removal
+- Lobby flow refinement
 - Arc Chart UI finalized
 - Bug fixes and UX clarity pass
 
@@ -186,7 +187,6 @@ Matchy Star intentionally avoids:
 
 If a feature relies on frustration, confusion, or coercion to increase engagement, it does not belong in this game.
 
-
 ## 10. Feedback & Contributions
 
 Feedback is welcome and encouraged.
@@ -196,16 +196,16 @@ Feedback is welcome and encouraged.
 - Email: michael@silverwaregames.com
 - Discord: https://discord.silverwaregames.com
 
-### Contribution Rules:
+### Contribution Rules
 - GitHub Community Guidelines apply
-- This repo is for Matchy Star only
+- This repository is for Matchy Star only
 - Final creative decisions belong to Silverware Games
 - No guaranteed compensation for ideas (free copy if used)
 - Report vulnerabilities privately
 
 ## 11. Design North Star
 
-When making decisions, ask:
+When evaluating any decision, ask:
 
 **Does this increase clarity, mastery, or long-term fun?**
 
