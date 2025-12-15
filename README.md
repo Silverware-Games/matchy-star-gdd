@@ -35,7 +35,7 @@ The systems below extend this loop without replacing it.
 
 The **Ballast System** introduces weight, balance, and risk management into matching decisions.
 
-- Ships accumulate ballast based on player actions
+- The ballast empties as you move gems, making each movement strategically significant.
 - Ballast meaningfully affects outcomes (difficulty, stability, scoring, or efficiency)
 - A dedicated **Ballast Counter UI** provides continuous feedback
 
