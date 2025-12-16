@@ -18,16 +18,17 @@ This is a design plan, not a pitch.
 ## 2. Core Gameplay Loop
 
 ### Current Loop (Alpha)
-1. Select a level  
-2. Match Stars to fuel ships  
-3. When three ships reach the destination, the level is cleared  
-4. Results → next level
+1. Select a level.
+2. Match Stars to fuel ships.
+3. If ships run out of fuel it's game over.
+4. When three ships reach the destination, the level is cleared.
+5. Results → next level.
 
 This loop works, but is extended by the systems below to support mastery, progression, and long-term play.
 
 ## 3. Core Systems
 
-### 3.1 Ballast System (Pacing & Difficulty Core)
+### 3.1 Ballast/Speed System (Pacing & Difficulty Core)
 
 **Ballast** is the single system governing pacing, difficulty, and risk.
 
@@ -35,9 +36,9 @@ This loop works, but is extended by the systems below to support mastery, progre
 - It determines how much the player can manipulate the board before ships advance
 
 **Thresholds (tunable):**
-- **Ballast 0–5:** Effectively turn-based (high control)
-- **Ballast 6+:** Ships move autonomously
-- **Ballast ~10:** Upper bound for skilled play
+- **Speed 0–5:** Effectively turn-based (high control)
+- **Speed 6+:** Ships move autonomously
+- **Speed ~10:** Upper bound for skilled play
 
 **Movement Budget:**
 - Each ship has a Ballast value (≥1)
@@ -99,7 +100,7 @@ The inventory is redesigned as a **curated loadout**, not storage.
 - Swapping items is costly or constrained
 - Items may increase Ballast, distort the Cluster, or lock future choices
 
-The goal is to eliminate “best item forever” behavior and force **intentional decisions**.
+The goal is to eliminate “best item forever” behavior and force **intentional decisions**. Also hoarding/churning through items is not allowed.
 
 ### 3.5 Items, Shop, & Zoot Economy
 
