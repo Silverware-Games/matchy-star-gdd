@@ -1,7 +1,7 @@
 # Matchy Star – Game Design Document
 
 Steam Page: https://matchystar.com  
-Developer: Silverware Games, Inc.  
+Developer: [Silverware Games, Inc.](https://silverwaregames.com)  
 Primary Contact: michael@silverwaregames.com / @michaelplzno  
 Uncut Play Video: https://www.youtube.com/watch?v=rDVWQaZiYxs
 
