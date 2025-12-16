@@ -7,187 +7,195 @@ Uncut Play Video: https://www.youtube.com/watch?v=rDVWQaZiYxs
 
 ## 1. What Matchy Star Is
 
-Matchy Star is a **skill-driven, replayable matching game** set in a sci-fi universe. It prioritizes **clarity, mastery, and long-term fun**, deliberately avoiding monetization pressure, casino mechanics, or psychological manipulation.
+Matchy Star is a **skill-driven, system-focused matching game** set in a colorful, wacky sci-fi universe (“the Matchyverse”).  
+It prioritizes **clarity, mastery, and long-term replayability**, and intentionally avoids monetization pressure, casino mechanics, or psychological manipulation.
 
-The current alpha build demonstrates that the core loop is already fun and functional. The purpose of this document is not to justify the game’s existence, but to define **the systems, structure, and content required to elevate it into a complete, exceptional experience** with strong progression and long-term replay value.
+The current alpha proves the core gameplay is already fun.  
+This document defines the systems and structure that turn Matchy Star into a **deep, replayable, high-skill game** that remains accessible.
 
-This document reflects the **actual planned design direction and milestones**, as tracked in the Matchy Star GDD issues repository.
+This is a design plan, not a pitch.
 
-## 2. Core Gameplay Loop (Current + Planned)
+## 2. Core Gameplay Loop
 
 ### Current Loop (Alpha)
 1. Select a level  
-2. Make matches to supply ships with fuel  
-3. Once three ships reach the destination, the level is cleared  
-4. Results are shown → next level
+2. Match Stars to fuel ships  
+3. When three ships reach the destination, the level is cleared  
+4. Results → next level
 
-This loop is solid, readable, and fun, but currently lacks:
-- Long-term progression context
-- Pre-run player agency
-- Systems that reward mastery over time
-- A strong sense of world and journey
+This loop works, but is extended by the systems below to support mastery, progression, and long-term play.
 
-The systems below extend this loop without replacing it.
+## 3. Core Systems
 
-## 3. Core Gameplay Systems
+### 3.1 Ballast System (Pacing & Difficulty Core)
 
-### 3.1 Ballast System (Core Pillar)
+**Ballast** is the single system governing pacing, difficulty, and risk.
 
-The **Ballast System** introduces weight, balance, and risk management into matching decisions.
+- Ballast is an integer value
+- It determines how much the player can manipulate the board before ships advance
 
-- The ballast empties as you move gems, making each movement strategically significant.
-- Ballast meaningfully affects outcomes (difficulty, stability, scoring, or efficiency)
-- A dedicated **Ballast Counter UI** provides continuous feedback
+**Thresholds (tunable):**
+- **Ballast 0–5:** Effectively turn-based (high control)
+- **Ballast 6+:** Ships move autonomously
+- **Ballast ~10:** Upper bound for skilled play
 
-**Purpose:**
-- Elevates matching from pattern recognition to decision-making
-- Creates tension and meaningful trade-offs
-- Allows mastery to emerge over repeated play
+**Movement Budget:**
+- Each ship has a Ballast value (≥1)
+- The player may move gems **one grid space per point of Ballast** before ships advance
+  - Ballast 20 → 20 grid spaces
+  - Ballast 1 → 1 grid space
 
-This is a **foundational system**, not optional content.
+As Celestials progress, baseline Ballast decreases, increasing pressure.
 
-### 3.2 Arc Chart UI (Core UI System)
+**Tradeoffs:**
+- Powerful items and score multipliers often **increase Ballast**
+- Control-oriented play reduces Ballast but limits scoring
+- High scores require accepting risk
 
-The **Arc Chart** visually communicates:
-- Progression arcs
-- Risk thresholds
-- Likely outcomes based on current state
+Ballast replaces “turn-based vs speed modes” with a **single continuous spectrum**.
 
-**Purpose:**
-- Makes cause → effect legible at a glance
-- Reduces confusion as systems stack
-- Supports higher skill ceilings without relying on text tutorials
+### 3.2 Cluster System (Persistent Star Pool)
 
-This UI teaches through **visualization and feedback**, not instruction.
+The **Cluster** is the player’s active pool of Stars, treated as a **managed set**, not pure randomness.
 
-## 4. Player Agency & Progression
+- Finite Star pool (e.g., 70–140 total, tunable)
+- Stars are drawn from this pool during play
+- Items, characters, and modes modify the Cluster over time
 
-### 4.1 Character Selection (Pre-Run)
+**Star Variants include:**
+- Standard Stars
+- Asteroids (match anything in a 3-match, bonus points)
+- Shiny / Glowing / Special Stars with buffs
+- Optional size variants (small / medium / large)
 
-Players select a character (or equivalent ship/loadout) before starting a run.
+A **Cluster View** screen shows the current pool and modifications.
 
-Characters influence:
-- Starting conditions
-- Ballast behavior
-- Rules, modifiers, or strategic emphasis
+**Goal:**  
+Reduce randomness, reward foresight, and support deck-building style mastery.
 
-**Purpose:**
-- Give players ownership over how they play
-- Encourage experimentation
-- Increase replayability without content bloat
+### 3.3 Characters as Rule Sets
 
-### 4.2 Unlockables & Game Modes
+Characters are **not cosmetic**.  
+Each character represents a **distinct way of playing the game**, unlocking modes and rule variations.
 
-Players unlock:
-- Characters
-- Gameplay modes
-- Rule variants (e.g., “Breaks On” vs “Breaks Off”)
+Examples (working concepts):
 
-All unlocks are **earned through play**, not monetization.
+- **Matchy** – Low Ballast, planning-focused
+- **Speedy Sputnik** – High Ballast, execution-focused
+- **Guru Moon** – Prediction and move queuing
+- **Dr. UFO** – Healing, survival, recovery
+- **Loony Lander** – Environmental manipulation
+- **Pirate Planet** – Economy-focused, high-risk Zoot runs
+- **King Zazz** – Rule-bending, mastery-only play
 
-**Purpose:**
-- Sustain long-term engagement
-- Let players tailor difficulty and playstyle
-- Keep the core loop fresh without relying on RNG or grind
+Some items are **character-locked or character-enhanced**, creating unique synergies.
 
-## 5. World & Level Structure
+### 3.4 Inventory Overhaul (Meaningful Choice)
 
-Matchy Star uses a **celestial progression model**, where themed regions introduce new mechanics, constraints, and visual identity.
+The inventory is redesigned as a **curated loadout**, not storage.
 
-### Planned Regions (Examples):
-1. **Celestial 1 – Alpha System**  
-   - Introductory region  
-   - Establishes baseline mechanics  
+- Few active item slots
+- Items involve commitment and tradeoffs
+- Swapping items is costly or constrained
+- Items may increase Ballast, distort the Cluster, or lock future choices
 
-2. **Celestial 2 – Starbase**  
-   - Increased system interaction  
-   - Greater emphasis on planning and control  
+The goal is to eliminate “best item forever” behavior and force **intentional decisions**.
 
-3. **Celestial 3 – Moon Spittoon**  
-   - Advanced mechanics  
-   - Higher risk / reward  
-   - Designed for experienced players  
+### 3.5 Items, Shop, & Zoot Economy
 
-There will be **11 total Celestials** in the complete game.
+Zoot and items are **high-impact systems**.
 
-Each region is designed to:
-- Reinforce mastery
-- Introduce variation without overwhelming the player
-- Provide a clear sense of progression, place, and journey
+- Even 1 Zoot can matter (Think Balatro Money System)
+- There is no inflation phase
+- Buying the wrong item can doom a run
 
-## 6. Game Flow & UX Improvements
+**Items:**
+- ~150 functionally unique items
+- No filler or minor stat bumps
+- Each item meaningfully changes playstyle
 
-### 6.1 Lobby Flow
+**Synergies:**
+- Rare combinations can “break” scoring systems
+- High-upside runs are possible but not guaranteed
+- Inspired by Balatro-style discovery and risk
 
-The current lobby flow will be refined.
+Power always comes with tradeoffs (Ballast, commitment, instability).
 
-Planned actions:
-- Simplify or remove unnecessary transitions
-- Reduce friction between levels
-- Prevent UI obstruction or visual confusion
+## 4. World Structure & Tone
 
-**Goal:**
-- Minimize time from “launch game” → “playing”
-- Maintain a clean, intuitive mental model
+### 4.1 Celestials & Naming
 
-### 6.2 Level Naming & Clarity
+The Matchyverse is intentionally playful and memorable (Bikini Bottom–style tone).
 
-Some levels require clearer naming or framing.
+Example Celestials:
+- Tube-Top Galaxy
+- Starter Sprinkles
+- Snack Station
+- Moon Spittoon
+- Cherry Bombast
+- Rubble Rumble
+- The Snack Hole
+- Double Bubble Zone
+- Matchsplosion
+- Tangle Spangle
+- Blurple Soup
+- Xanadu (final system)
 
-Planned improvements:
-- Rename levels where intent is unclear
-- Align names with mechanics and expectations
+There are **11 total Celestials** in the complete game.
 
-**Goal:**
-- Reduce player confusion
-- Make progression feel deliberate and readable
+Names communicate **tone, mechanics, and escalation**, not realism.
 
-## 7. Visual & Technical Cleanup
+## 5. Five-System Run (Procedural Galaxy Mode)
 
-### Planned Technical Work:
-- Migrate item handling to a centralized **Sprite-based system**
-- Resolve known visual bugs (e.g., runway lighting inconsistencies)
-- Improve ship visibility and UI layering
+A repeatable, high-skill mode.
 
-**Purpose:**
-- Increase stability and maintainability
-- Improve visual clarity during play
-- Support future expansion cleanly
+- Five Star Systems placed procedurally
+- Connected via a generated path
+- Each system contains five regenerating levels
+- Mix of hand-authored and procedural content
 
-## 8. Milestone Overview
+**Cosmic Modifiers:**
+- Aligned planets
+- Extra planets
+- Ascending / descending planets (affect Ballast & scoring)
 
-### Phase 1 – Core Systems
-- Ballast system implementation
-- Ballast UI integration
-- Sprite system migration
+Poor item or Cluster decisions can make a run unwinnable.  
+This is intentional.
 
-### Phase 2 – Player Choice
-- Character select screen
-- Unlockable characters
-- Alternate gameplay modes
+## 6. Meta Systems
 
-### Phase 3 – World Completion
-- Alpha System finalized
-- Starbase region implemented
-- Moon Spittoon region implemented
-- Additional Celestials in production
+### 6.1 Matchydex (Discovery & Stats)
 
-### Phase 4 – Polish & Flow
-- Lobby flow refinement
-- Arc Chart UI finalized
-- Bug fixes and UX clarity pass
+An in-game encyclopedia and stat hub.
 
-## 9. Design Constraints
+- Entries for all Stars, items, states, characters, and systems
+- Entry states: Locked → Undiscovered → Known
+- Tracks stats like:
+  - Stars matched (by color)
+  - Runs won / lost
+  - Total Zoot collected
 
-Matchy Star intentionally avoids:
+Designed to reward curiosity and mastery.
+
+## 7. Design Constraints
+
+Matchy Star avoids:
 - Energy timers
 - Gacha mechanics
 - Pay-to-win systems
 - Psychological manipulation
 
-If a feature relies on frustration, confusion, or coercion to increase engagement, it does not belong in this game.
+If a feature relies on frustration or coercion, it does not belong.
 
-## 10. Feedback & Contributions
+## 8. Design North Star
+
+When evaluating any decision, ask:
+
+**Does this increase clarity, mastery, or meaningful choice?**
+
+If not, reconsider.
+
+## 9. Feedback & Contributions
 
 Feedback is welcome and encouraged.
 
@@ -202,11 +210,3 @@ Feedback is welcome and encouraged.
 - Final creative decisions belong to Silverware Games
 - No guaranteed compensation for ideas (free copy if used)
 - Report vulnerabilities privately
-
-## 11. Design North Star
-
-When evaluating any decision, ask:
-
-**Does this increase clarity, mastery, or long-term fun?**
-
-If not, it should be reconsidered.
