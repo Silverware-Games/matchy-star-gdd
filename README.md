@@ -7,7 +7,7 @@ Uncut Play Video: https://www.youtube.com/watch?v=rDVWQaZiYxs
 
 ## 1. What Matchy Star Is
 
-Matchy Star is a skill-driven matching adventure about helping goofy little ships cross strange cosmic routes by matching Stars, managing resources, and making increasingly clever decisions.
+Matchy Star is a skill-driven matching adventure about moving the Stars to help goofy little ships cross strange cosmic routes, managing resources, and making increasingly clever decisions.
 
 The game should feel colorful, funny, readable, optimistic, and fair. It should be easy to start, but deep enough that experienced players can chase better routes, better builds, better scores, and better runs.
 
